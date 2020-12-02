@@ -1,0 +1,33 @@
+# This a script about controller.hear.
+# On anyone of events happened, and any keywords heard, will reply all the replies
+description: on heard something, run!
+
+# type is required. type pattern: hears, dialog 
+type: hears
+
+# script is required, with children of keywords, events and replies.
+# and all of the children are required.
+script: 
+  # on anyone of these keywords heard 
+  keywords: 
+    - help
+    - ヘルプ
+  
+  # on anyone of these events happened.
+  events:
+    - message
+    - direct_message
+    - text
+    
+  # all of the replies will be sent when triggered.
+  replies:
+    - text: 有什么可以帮您的么？
+    - text: Can I help you?
+    - text: Que puis-je pour vous?
+    - text: ご用件は何でしょうか？
+      quick_replies:
+        - title: データ登録
+          payload: On client select me, tell server ":insert into userinfo(id, name, password) values(?,?,?)"
+        - title: データ更新
+          payload: On client select me, tell server ":update userinfo set name=?, password=? where id=?"
+        
