@@ -17,23 +17,20 @@ script:
         payload: japanese
       - title: 算数
         payload: Math
+      - title: 無し
+        payload: Math
     collect:
       key: subject_name
       options:
         - type: string
-          pattern: yes
-          thread_name: question_username
+          pattern: japanese
+          thread_name: default
+        - type: string
+          pattern: Math
+          thread_name: default
         - type: string
           default: true
-          thread_name: default
-
-  - type: action
-    action: question_content
-    thread_name: question_username
-
-  - type: message
-    text: このメッセージはdialaogより送信されています。
-    thread_name: content_company
+          pattern: default
 
   - type: question
     text: what's your matter?
@@ -46,9 +43,12 @@ script:
       key: matter_name
       options:
         - type: string
-          pattern: yes
-          thread_name: question_username
+          pattern: japanese
         - type: string
           default: true
-          thread_name: default
 
+  - type: action
+    action: question_content
+
+  - type: message
+    text: このメッセージはdialaogより送信されています。

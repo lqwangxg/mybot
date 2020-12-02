@@ -22,3 +22,4 @@ script:
   replies:
     - text: 少々お待ち下さい。ダイアログ起動中…
         
+  dialog: dialog_userinfo_confirm

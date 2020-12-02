@@ -288,6 +288,7 @@ module.exports = async function(controller) {
       if(script.dialog){
         await bot.beginDialog(script.dialog);
       }
+      
     });
 
 
