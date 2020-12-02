@@ -2,16 +2,20 @@
     "name": "botkit-mybot",
     "version": "1.0.0",
     "description": "",
-    "main": "bot.js",
+    "author": "lqwangxg",
+    "license": "MIT",
     "scripts": {
-        "start": "node bot.js",
+        "start": "node run serve",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "dependencies": {
+        "bluebird": "^3.7.2",
         "botbuilder-adapter-web": "^1.0.9",
         "botbuilder-storage-mongodb": "^0.9.5",
         "botkit": "^4.10.0",
         "botkit-plugin-cms": "^1.0.3",
         "dotenv": "^7.0.0"
+    },
+    "devDependencies": {
     }
 }

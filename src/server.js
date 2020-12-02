@@ -2,6 +2,8 @@
 // |__) /  \  |  |__/ |  |  
 // |__) \__/  |  |  \ |  |  
 
+//import { Botkit } from "botkit";
+
 // This is the main file for the mybot bot.
 
 // Import Botkit's core features
@@ -19,7 +21,7 @@ require('dotenv').config();
 
 let storage = null;
 if (process.env.MONGO_URI) {
-    storage = mongoStorage = new MongoDbStorage({
+    storage = new MongoDbStorage({
         url : process.env.MONGO_URI,
     });
 }
