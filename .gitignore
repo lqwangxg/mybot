@@ -1,4 +1,7 @@
 .env
 .log
+.js
+.js.map
+
 dist/
 node_modules/
