@@ -22,6 +22,12 @@ script:
   # all of the replies will be sent when triggered.
   replies:
     - text: 有什么可以帮您的么？
+      quick_replies:
+        - title: 登录数据
+          payload: On client select me, tell server ":insert into userinfo(id, name, password) values(?,?,?)"
+        - title: 更新数据
+          payload: On client select me, tell server ":update userinfo set name=?, password=? where id=?"
+          
     - text: Can I help you?
     - text: Que puis-je pour vous?
     - text: ご用件は何でしょうか？

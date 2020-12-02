@@ -1,0 +1,21 @@
+# This a script about controller.hear.
+# On anyone of events happened, and any keywords heard, will reply all the replies
+description: on event happened, run!
+
+# type is required. type pattern: hears, dialog 
+type: "on"
+
+# script is required, with children of keywords, events and replies.
+# and all of the children are required.
+script: 
+  # on anyone of these events happened.
+  events:
+    - hello
+    - welcome_back
+    
+  # all of the replies will be sent when triggered.
+  replies:
+    - text: ようこそ！MBPSmartecのボットです。なんでも大丈夫、僕とチャットしましょう！
+  
+  dialog: dialog_userinfo_confirm
+  

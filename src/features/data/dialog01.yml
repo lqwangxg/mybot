@@ -1,0 +1,54 @@
+# This a script about controller.dialog.
+# 
+description: This a script about controller.dialog.
+
+# type is required. type pattern: hears, dialog 
+type: dialog
+# id is required.
+id: dialog_userinfo_confirm
+
+# script is required, with children of keywords, events and replies.
+# and all of the children are required.
+script: 
+  - type: ask
+    text: what's your fevorite subjects?
+    quick_replies:
+      - title: 国語
+        payload: japanese
+      - title: 算数
+        payload: Math
+    collect:
+      key: subject_name
+      options:
+        - type: string
+          pattern: yes
+          thread_name: question_username
+        - type: string
+          default: true
+          thread_name: default
+
+  - type: action
+    action: question_content
+    thread_name: question_username
+
+  - type: message
+    text: このメッセージはdialaogより送信されています。
+    thread_name: content_company
+
+  - type: question
+    text: what's your matter?
+    quick_replies:
+      - title: 国語
+        payload: japanese
+      - title: 算数
+        payload: Math
+    collect:
+      key: matter_name
+      options:
+        - type: string
+          pattern: yes
+          thread_name: question_username
+        - type: string
+          default: true
+          thread_name: default
+
